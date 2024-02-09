@@ -1,3 +1,4 @@
+from prompt_templates import memory_prompt_template
 from langchain.chains import StuffDocumentsChain,LLMChain, ConversationalRetrievalChain
 from langchain.embeddings import HuggingFaceInstructEmbeddings
 from langchain.memory import ConversationBufferWindowMemory
@@ -35,3 +36,4 @@ class chatChain:
     def __init__ (self, chat_history, model_path=config["model_path"]["large"],model_type= config["model_type"]):
         self.memory = create_chat_memory(chat_history)
         llm = create_llm(model_path, model_type)
+        chat_prompt= create_prompt_from_template(memory_prompt_template)
