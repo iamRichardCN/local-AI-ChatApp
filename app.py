@@ -1,6 +1,7 @@
 import streamlit as st
 
-
+def load_chain():
+    return load_normal_chain()
 def clear_input_field():
     st.session_state.user_question=st.session_state.user_input
     st.session_state.user_input= ""
